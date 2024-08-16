@@ -1,18 +1,18 @@
-#include <stdio.h> //biblioteca de comunicação com o usuário
-#include <stdlib.h> //biblioteca de alocação de espaço em memória
-#include <locale.h> //biblioteca de alocação de texto por região
-#include <string.h> //biblioteca responsável por cuidar das strings
+#include <stdio.h> //biblioteca de comunicaï¿½ï¿½o com o usuï¿½rio
+#include <stdlib.h> //biblioteca de alocaï¿½ï¿½o de espaï¿½o em memï¿½ria
+#include <locale.h> //biblioteca de alocaï¿½ï¿½o de texto por regiï¿½o
+#include <string.h> //biblioteca responsï¿½vel por cuidar das strings
 int registro() //Funcao de registar os nomes
 {
-   char arquivo[40];//Criação das variáveis/string
+   char arquivo[40];//Criaï¿½ï¿½o das variï¿½veis/string
    char cpf[40];
    char nome [40];
    char sobrenome [40];
    char cargo [40];//Fim da criação das string
    
-   printf("Digite o CPF a ser cadastrado: ");//coletando informação do usuario
-   scanf("%s", cpf);//armazenando as strings do usuário, refere-se as string
-   strcpy(arquivo, cpf); //Responsável por copiar os valores da string
+   printf("Digite o CPF a ser cadastrado: ");//coletando informaï¿½ï¿½o do usuario
+   scanf("%s", cpf);//armazenando as strings do usuï¿½rio, refere-se as string
+   strcpy(arquivo, cpf); //Responsï¿½vel por copiar os valores da string
    
    FILE *file; //cria o arquivo no banco de dados 
    file = fopen(arquivo, "w"); // cria o arquivo e o w significa escrever
@@ -33,7 +33,7 @@ int registro() //Funcao de registar os nomes
    fprintf(file, ",");
    fclose(file);
    
-   printf("Digite o sobrenome a ser cadastrado: ");//coletando informaçoes do usuário 
+   printf("Digite o sobrenome a ser cadastrado: ");//coletando informaï¿½oes do usuï¿½rio 
    scanf("%s", sobrenome);
    file = fopen(arquivo, "a");
    fprintf(file, sobrenome);
@@ -43,8 +43,8 @@ int registro() //Funcao de registar os nomes
    fprintf(file, ",");
    fclose(file);
    
-   printf("Digite o cargo a ser cadastrado: ");//coletando informações do usuario
-   scanf("%s", cargo);//registro da stringo do usuário
+   printf("Digite o cargo a ser cadastrado: ");//coletando informaï¿½ï¿½es do usuario
+   scanf("%s", cargo);//registro da stringo do usuï¿½rio
    file = fopen(arquivo, "a");
    fprintf(file,cargo);
    fclose(file);
@@ -111,7 +111,7 @@ int main()
 	for(laco=1;laco=1;)
     {
 	
-    system ("cls");//responsável por limpar a tela
+    system ("cls");//responsï¿½vel por limpar a tela
      setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
   
   
@@ -120,6 +120,7 @@ int main()
     printf("\t1 - Registrar nomes\n");
     printf("\t2 - Consultar nomes\n");
     printf("\t3 - Deletar nomes\n"); 
+    printf("\t4 - Sair do sistema\n\n");
     printf("Opção:  ");//fim do menu
    
      
@@ -141,6 +142,11 @@ int main()
         
     	deletar();
     	break;
+
+        case 4:
+        printf("Obrigado por utilizar o sistema\n\n");
+        return 0;
+        break ;
     	
     	
     	
